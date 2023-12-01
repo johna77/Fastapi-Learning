@@ -4,10 +4,11 @@ from . import schemas, models, database
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
-from app.config import settings
+from app.config import Settings
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl='login')
 
+settings = Settings()
 
 SECRET_KEY = settings.secret_key
 ALGORITHM = settings.algorithm
